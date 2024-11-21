@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700; 1,900&display=intercambio');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    overflow: hidden;
+}
+/* ################ MENU DE NAVEGACION ############### */
+header::before{
+    content: "";
+    display: block;
+    margin-bottom: 80px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+    background-color: #40006b;
+    color: white;
+    height: 60px;
+    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #9d00ff;
+  }
+
+  /* Icono de hamburguesa */
+  .hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    
+  }
+
+  .hamburguesa span {
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Ocultar checkbox */
+  #menu-toggle {
+    display: none;
+  }
+
+  /* Menú para pantallas pequeñas */
+  #menu-toggle:checked ~ nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #40006b;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center;    /* Centrar horizontalmente */
+    gap: 30px;              /* Espacio entre los enlaces */
+    z-index: 10;
+  }
+
+  #menu-toggle:checked ~ nav a {
+    font-size: 1.5em;
+  }
+
+  /* Botón de cierre */
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #9d00ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  /* Mostrar botón de cierre con menú activo */
+  #menu-toggle:checked ~ nav .close-button {
+    display: flex;
+  }
+
+  /* Animación del icono */
+  #menu-toggle:checked + .hamburguesa span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .hamburguesa span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .hamburguesa span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Responsive: Mostrar icono hamburguesa en pantallas pequeñas */
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
+
+    .hamburguesa {
+      display: flex;
+      position: absolute;
+      right: 20px; /* Aseguramos que siempre esté en la parte derecha */
+    }
+
+    #menu-toggle:checked ~ nav {
+      display: flex;
+    }
+  }
+
+  /* Ocultar botón de cierre en pantallas grandes */
+  @media (min-width: 769px) {
+    .close-button {
+      display: none;
+    }
+  }
+.titulospro{
+    text-align: left;
+    margin: 20px 0;
+}
+
+.contenido-header{
+    width: 80%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contenido-header > img{
+    width: 400px;
+    height: 300px;
+    margin-left: 50px;
+    animation: ease-in animacion 0.5s;
+}
+
+@keyframes animacion{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.text-header{
+    margin: 0 0 0 30px;
+}
+
+.contenido-header p{
+    font-weight: 300;
+    margin-top: 14px;
+    color: #5d6678;
+    text-align: justify;
+
+}
+
+.contenido-header a{
+    margin: 28px 0 0 0 ;
+    width: 150px;
+    display: inline-block;
+    background-color: #40006b;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 400px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px #40006b;
+}
+
+/* ############# SECTION EDUCACIÓN ############# */
+.title{
+    margin-top: 150px;
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.educacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    padding: 20px;
+}
+
+.content-educacion{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    justify-content: space-around;
+    gap: 20px; /* Espacio entre las tarjetas */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.articulo{
+    width: 30%;
+    background-color: #fff;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 45px 30px 60px 30px;
+    transition: all ease-in-out .5s;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del elemento */
+}
+
+.articulo:hover{
+    box-shadow: 0 4px 10px #40006b;
+    color: #fff;
+    background-color: #40006b;
+    transition: .5s;
+}
+
+.articulo > h3{
+    font-size: 24px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #333; /* Color por defecto */
+}
+
+.articulo > a{
+    text-decoration: none;
+    color: #000;
+    transition: .5s;
+}
+
+.articulo > a:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .articulo{
+        width: 45%; /* Menor ancho para pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .articulo{
+        width: 100%; /* Ancho completo para pantallas más pequeñas */
+    }
+}
+
+/* ################################## EXPERIENCIA ################################## */
+.experiencia {
+    background-color: #40006b;
+    color: #fff;
+}
+
+.content-experience{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    justify-content: space-around;
+}
+
+.experience {
+    width: 32%;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #565759;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.experience:hover {
+    box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
+}
+
+.experience img {
+    height: 70px;
+    width: auto;
+}
+
+.experience p {
+    text-align: justify;
+}
+
+.experience h3 {
+    margin-bottom: 15px;
+}
+
+
+/* ################################## SKILLS ################################## */
+
+.habilidades{
+    margin-top: 50px;
+}
+.content-skills {
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-top: 100px;
+    justify-content: space-evenly; 
+}
+.skills {
+    width: 32%;
+    margin-bottom: 70px;
+    transition: 0.5s;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.skills h2 {
+    margin-bottom: 20px;
+    color: black;     
+}
+
+.skills img {
+    width: auto;
+    height: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+    color: #565759;
+}
+
+.skills img.softskills {
+    height: 68px;
+}
+
+.skills img:hover {
+    transition-duration: .7s;
+    transform: rotate(360deg);
+}
+
+.skills:hover {
+    box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
+    color: #fff;
+    background: #40006b;
+    transition: .5s;
+}
+
+/* ################################## CERTIFICADOS ################################## */
+.certificados {
+    background: #ffffff;
+    /* padding: 0 100px; */
+}
+
+.content-certificados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.certificate {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 22%;
+    padding: 15px;
+    color: #565759;
+    margin: 30px 20px 20px 0;
+    text-align: center;
+}
+
+.certificate img {
+    height: 100px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.certificate:hover {
+    box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
+    color: #fff;
+    background: #40006b;
+    transition: .5s;    
+}
+
+.certificate a {
+    text-decoration: none;
+    color: #565759;
+}
+
+.certificate a:hover {
+    color: #fff;
+}
+
+/* ################################## MEDIA QUERYS ################################## */
+
+@media screen and (max-width:600px) {
+    h1{
+        font-size: 25px;
+    }
+    .contenido-header{
+        width: 100%;
+        height: 560px;
+    }
+    .contenido-header>img{
+        width: 120px;
+        height: 120px;
+        animation: ease-in animacion 0.5s;
+        margin: 20px 0;
+    }
+    .articulo, .experience, .certificate, .skills{
+        width: 90%;
+    }
+    .skills{
+        margin-bottom: 20px;
+    }
+    .articulo, .experience, .content-skills{
+        margin-top: 20px;
+    }
+    .content-skills{
+        margin-bottom: 20px;
+    }
+    .content-certificados{
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .certificate{
+        margin: 10px;
+        padding: 10px;
+    }
+    .enlaces-header{
+        position: fixed;
+        background-color: #40006b;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        clip-path: circle(0.0% at 0 0);
+    }
+    .nav .enlaces-header a{
+        color: #fff;
+        background-color: #ab00fa;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 20px;
+        width: 50%;
+        text-align: center;
+    }
+    .nav .enlaces-header a:hover{
+        color: #40006b;
+        background-color: #fff;
+    }
+    .hamburguer{
+        display: block;
+    }
+    .nav .hamburgueropen{
+        clip-path: circle(150% at 0 0);
+    }
+}
+
+/* ################################## INFO PERSONAL ################################## */
+.content-infopersonal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.space-infoperson {
+    width: 30%;
+    /* margin: auto; */
+    text-align: center;
+}
+
+.space-infoperson img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: 10px solid #f2f2f2;
+}
+
+.space-infoperson p {
+    text-align: justify;
+    font-size: 300;
+    color: #565759;
+}
+
+.space-infoperson img:hover {
+    box-shadow: 0 5px 20px rgba(17, 29, 48, .26);
+    transition: .5s;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 20px 0;
+    padding-top: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.partFooter {
+    width: 22%;
+    text-align: center;
+}
+
+.partFooter img {
+    width: 60%;
+    margin: 0 0 120px;
+}
+
+.partFooter h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    background-color: #40006b;
+    padding: 5px;
+    border: 1px solid #40006b;
+    border-radius: 5px;
+}
+
+.contact {
+    margin: 10px;
+    display: block;
+    text-align: left;
+}
+
+.contact > i {
+    float: left;
+    margin: 0 0 0 10px;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    align-items: center;
+}
+
+.contact > p {
+    margin-left: 50px;
+    align-items: center;
+    line-height: 28px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.partFooter > a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.partFooter > a:hover {
+    color: #000000;
+    background-color: #ab00fa;
+    border-color: #ab00fa;
+    transition: all ease-in-out .6s;
+    border-radius: 5px;
+}
+
+.social-media > a > i {
+    font-size: 20px;
+    display: inline-block;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all ease-in-out .3s;
+    margin-right: 5px;
+}
+
+.social-media > a > i:hover {
+    color: #fff;
+    background-color: #40006b;
+    border-color: #40006b;
+}
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Organiza los elementos del footer en columna */
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+
+    .partFooter {
+        width: 100%; /* Hace que cada parte del footer ocupe el 100% del ancho */
+        margin-bottom: 20px; /* Agrega espacio entre los elementos */
+    }
+
+    .contact p {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .social-media > a > i {
+        margin-right: 15px; /* Añade margen entre los iconos de redes sociales */
+        margin-top: 10px; /* Espacio superior entre los iconos */
+    }
+}
